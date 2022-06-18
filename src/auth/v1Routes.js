@@ -27,9 +27,11 @@ async function handleGetAll(req, res) {
 }
 
 async function handleGetOne(req, res) {
-  const id = req.params.id;
+  const id = parseInt(req.params.id)
+  
   let theRecord = await req.model.get(id)
   res.status(200).json(theRecord);
+
 }
 
 async function handleCreate(req, res) {
@@ -39,18 +41,30 @@ async function handleCreate(req, res) {
 }
 
 async function handleUpdate(req, res) {
-  const id = req.params.id;
+  const id = parseInt(req.params.id)
   const obj = req.body;
+  let foundId=await req.model.get(id)
+  if(foundId){
   let updatedRecord = await req.model.update(id, obj)
   res.status(201).json(updatedRecord);
 }
+else{
+    res.send("there is no Id found ")
+}
+}
 
 async function handleDelete(req, res) {
-  let id = req.params.id;
+  let id = parseInt(req.params.id)
+  let foundId=await req.model.get(id)
+  if(foundId){
   let deletedRecord = await req.model.delete(id);
   res.status(204).send({
-   Deleted : deletedRecord,
-Massage:"successfuly deleted"});
+    deleted: deletedRecord,
+ massage:"successfuly deleted"});
+ }
+  else{
+    res.send("no Id found")
+  }
 }
 
 
