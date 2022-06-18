@@ -34,7 +34,7 @@
     * "supertest" 
 * The same as before tasks we have to do server file , and require all the routes on it , **modularity** then I mange the user sign up , so the user data will be saved in the database , for sure the password should be hashed , after that the sign in routes , so the user when he will enter username and the password , we will check the data base for the user , if we found him we will give him massage signed in successfully and we will generat token for him , 
 
-* we have new thing added to the user schema , is the role , or we can called it Action control list , so we will add a role to each user , this role will give the user access to do some Action , on spacific routes , we will take about 
+* we have new thing added to the user schema , is the role , or we can called it Action control list , so we will add a role to each user , this role will give the user access to do some Action , on spacific routes , we will talk about it now.
 
 * I Add new models with routes and table schemas , for Food and Clothes , and I created for these two model to sets of routes V1 set and V2 set , on V1 set route any user can get access to these routes and he can show the data , post data , update and delete 
 
