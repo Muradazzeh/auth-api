@@ -1,9 +1,9 @@
 # Auth-api
 ### links for my work 
-* this is the pull request link [pull request](https://github.com/Muradazzeh/basic-auth/pull/1)
-* this is the link for action page from git hub [action page](https://github.com/Muradazzeh/basic-auth/actions)
-* this is the link for heroku web site [ herokulink](https://murad-basic-auth.herokuapp.com/)
-* this is the link for main repo [ repo link ](https://github.com/Muradazzeh/basic-auth)
+* this is the pull request link [pull request]https://github.com/Muradazzeh/auth-api/pull/2)
+* this is the link for action page from git hub [action page]https://github.com/Muradazzeh/auth-api/actions)
+* this is the link for heroku web site [ herokulink](https://auth-api-murad.herokuapp.com/)
+* this is the link for main repo [ repo link ](https://github.com/Muradazzeh/auth-api)
 
 ## Introduction 
 * What is RBAC : idea of assigning system access to users based on their role in an organization. It's important to remember that not every employee needs a starring role 

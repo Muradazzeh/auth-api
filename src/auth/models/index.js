@@ -5,9 +5,18 @@ const { Sequelize, DataTypes } = require('sequelize');
 const clothesModel = require('./clothes/clothes');
 const foodModel = require('./food/food');
 const Collection = require('./collections');
-const DATABASE_URL = process.env.DATABASE_URL || 'sqlite:memory;';
-
-const sequelize = new Sequelize(DATABASE_URL);
+const POSTGRES_URI = process.env.NODE_ENV === 'test' ? 'sqlite:memory:' : process.env.DATABASE_URL;
+let sequelizeOptions =
+    process.env.NODE_ENV === "production"
+        ? {
+            dialect: 'postgres',
+            protocol: 'postgres',
+            dialectOptions: {
+                ssl: { require: true, rejectUnauthorized: false},
+                native: true
+            }
+        } : {};
+        let sequelize = new Sequelize(POSTGRES_URI, sequelizeOptions);
 const food = foodModel(sequelize, DataTypes);
 const clothes = clothesModel(sequelize, DataTypes);
 
