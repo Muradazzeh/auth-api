@@ -78,12 +78,13 @@
 ![linkk](./src/image/Screenshot%20(280).png)
 
 
-> Note that I used the same tables for v1 set and v2 set , but all works ok , 
+> Note that I used the same tables for v1 Routes set and v2 Routes set , in v1 you can access all the method and routes without any authorization  , and on V2 set you need to be loged in to access , but you now both the same tables  
 
 * now I will start with the TDD , jest test , I prepared  basic cases test for , the server , V1 routes , V2 routes and for the both middle wares , basic authentecation and bearer authentecation , 
 * As shown below all the result for the tests , 
 
-> note : that I did all this test one by one all passed , but when I do them all togather , the test gives one or two error 
+> note : that I did all this test one by one all passed , but when I do them all togather , the test gives one or two error .
+
 ![link](./src/image/Screenshot%20(281).png)
 ![link](./src/image/Screenshot%20(282).png)
 ![link](./src/image/Screenshot%20(283).png)
@@ -91,6 +92,13 @@
 ![link](./src/image/Screenshot%20(285).png)
 
 * After test finshied now it time to uploded to GitHub , and this is the action ;
+
+![link](./src/image/Screenshot%20(289).png)
+
+* Final part Heroku web site this is sample of the deployed routes , so you can check and test the remaining 
+
+![link](./src/image/Screenshot%20(288).png)
+![link](./src/image/Screenshot%20(290).png)
 
 
 
