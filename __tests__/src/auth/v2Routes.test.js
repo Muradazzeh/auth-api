@@ -11,9 +11,6 @@ const mockRequest = supertest(server);
 let userData = {
   testUser: { username: 'user', password: 'password' },
 };
-let userDataAdmin = {
-  testUser: { username: 'user', password: 'password',role: "admin" },
-};
 let accessToken = null;
 let clothesData = {
   testUser: { name: 'jens', color: 'red',size: "xl" },
@@ -100,31 +97,12 @@ it('Trying to access V2 clothes routes with normal user', async () => {
     console.log(">>>>>>>>>>>>>>>",accessToken)
     // First, use basic to login to get a token
     const bearerResponse = await mockRequest
-      .post('/api/v2/food')
-      .set('Authorization', `Bearer ${accessToken}`)
-      .send(clothesData.testUser);
+      .get('/api/v2/food')
+      .set('Authorization', `Bearer ${accessToken}`);
 
     // Not checking the value of the response, only that we "got in"
-    expect(bearerResponse.status).toBe(500);
+    expect(bearerResponse.status).toBe(200);
   });
-  // it('Can signin with bearer auth token as Admin  and try to post on clothes route ', async () => {
-  //   let { username, password,role } = userDataAdmin.testUser;
-
-  //   // First, use basic to login to get a token
-  //   const response = await mockRequest.post('/signin')
-  //     .auth(username, password,role);
-
-  //   accessToken = response.body.token;
-  //   console.log(">>>>>>>>>>>>>>>",accessToken)
-  //   // First, use basic to login to get a token
-  //   const bearerResponse = await mockRequest
-  //     .post('/api/v2/food')
-  //     .set('Authorization', `Bearer ${accessToken}`)
-  //     .send(clothesData.testUser);
-
-  //   // Not checking the value of the response, only that we "got in"
-  //   expect(bearerResponse.status).toBe(200);
-  // });
 
 
 })
